@@ -11,28 +11,28 @@ export default function ExperienceSection() {
 
   const experiences = [
     {
-      company: 'Elaunch Solutions',
+      company: 'Elvee Ltd',
       role: 'Software Engineer',
-      period: 'Jan 2023 - Present',
-      location: 'Surat, Gujarat',
+      period: 'May 2026 - Present',
+      location: 'Remote',
       achievements: [
-        'Designed and engineered scalable backend solutions using Node.js and NestJS, building high-performance, resilient client-facing platforms',
-        'Enhanced application security in Node.js applications by implementing JWT-based authentication, OAuth authorization, and advanced data encryption strategies',
-        'Boosted application performance and scalability by implementing load balancing with Node.js clustering and PM2 process management, efficiently distributing workload and reducing server response time by 40% under peak loads of 15,000 requests per minute',
-        'Architected automated CI/CD pipelines integrated with Docker and Kubernetes on Node.js, reducing deployment errors by 95% and accelerating release cycles by 35%',
-        'Actively participated in code reviews, providing constructive feedback to foster a culture of learning and improvement',
+        'Drove backend architecture and technical direction by evaluating architectural trade-offs, designing scalable solutions, and establishing engineering standards that improved code quality, reduced technical debt, and accelerated feature development',
+        'Simplified complex application workflows by redesigning shared components, consolidating duplicated business logic, and improving system modularity, enabling faster development, easier maintenance, and more consistent implementations across the codebase',
+        'Owned production delivery from design to deployment by collaborating with product stakeholders to translate evolving business requirements into scalable technical solutions, proactively resolving production issues, and ensuring stable, reliable feature releases',
       ],
     },
     {
-      company: 'Bitcoding Solution',
-      role: 'Software Engineer Intern',
-      period: 'June 2022 - July 2022',
+      company: 'Elaunch Solutions',
+      role: 'Software Engineer',
+      period: 'Jan 2023 - Apr 2026',
       location: 'Surat, Gujarat',
       achievements: [
-        'Designed and implemented responsive, accessible interfaces using React and Next.js, ensuring seamless user interactions across devices',
-        'Utilized React Context API and RESTful APIs for efficient state management, eliminating unnecessary re-renders and boosting performance',
-        'Integrated RESTful APIs and libraries into React Query/Axios, optimizing data fetching, code-splitting, lazy loading, and image optimization to reduce load times by up to 40%',
-        'Collaborated with team members using version control systems like Git to efficiently manage modifications and design tasks',
+        'Architected modular backend services using Node.js, NestJS, Express.js, and TypeScript, designing scalable REST APIs and reusable service layers that accelerated feature development while simplifying long-term system maintenance',
+        'Improved backend performance by 2–3× through Redis caching, database query optimization, asynchronous job processing, and efficient indexing while scaling the platform with Redis Pub/Sub, PM2 Cluster Mode, and background workers, reducing average API response times by over 60% and supporting high concurrent traffic',
+        'Built a centralized authentication and authorization framework using JWT, OAuth, RBAC, and API encryption/decryption, strengthening application security and providing consistent access control across multiple production applications',
+        'Engineered real-time communication features using Socket.IO and WebSockets to power instant messaging, live notifications, and event-driven updates, delivering low-latency experiences for interactive applications',
+        'Implemented automated CI/CD pipelines using Docker, Kubernetes, Jenkins, and GitHub Actions, eliminating manual deployment steps and improving deployment consistency across environments',
+        'Optimized frontend performance using React, Next.js, React Query, Zustand, lazy loading, image optimization, and code splitting, reducing initial page load time by nearly 40% and delivering a faster, more responsive user experience',
       ],
     },
   ];

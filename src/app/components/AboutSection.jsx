@@ -10,7 +10,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { label: 'Years Experience', value: '3' },
+    { label: 'Years Experience', value: '3.6+' },
     { label: 'Projects Completed', value: '5+' },
     { label: 'Technologies', value: '15+' },
   ];
@@ -33,17 +33,16 @@ export default function AboutSection() {
               Full-Stack Software Engineer
             </h3>
             <p className="mb-4">
-              I'm a passionate Software Engineer with over 3 years of experience building scalable web applications 
-              and robust backend systems. Currently working at <span className="text-primary font-semibold">Elaunch Solutions</span>, 
-              where I architect high-performance backend solutions using Node.js and NestJS.
+              I'm a passionate Software Engineer with over 3.6+ years of experience building scalable web applications 
+              and robust backend systems. Currently working at <span className="text-primary font-semibold">Elvee Ltd</span>, 
+              where I drive backend architecture and technical direction for scalable, high-performance solutions.
             </p>
             <p className="mb-4">
-              My expertise lies in designing and implementing secure, scalable backend architectures with modern technologies. 
-              I've successfully improved application throughput by 75% through load balancing and PM2 clustering, and reduced 
-              deployment errors by 95% with CI/CD automation.
+              My expertise lies in designing modular backend services, optimizing system performance by 2-3×, 
+              building centralized authentication frameworks, and implementing automated CI/CD pipelines with Docker and Kubernetes.
             </p>
             <p>
-              I graduated with a Bachelor's degree in Computer Engineering from <span className="text-primary font-semibold">Sarvajanik College of Engineering and Technology</span> with a CGPA of 8.39/10.
+              I graduated with a Bachelor's degree in Computer Engineering from <span className="text-primary font-semibold">Gujarat Technological University</span> with a CGPA of 8.39/10.
             </p>
           </motion.div>
 
@@ -80,8 +79,8 @@ export default function AboutSection() {
           <div className="flex justify-between items-start flex-wrap gap-4">
             <div>
               <h4 className="font-semibold text-lg">Bachelor of Engineering in Computer Engineering</h4>
-              <p className="text-secondary">Sarvajanik College of Engineering and Technology</p>
-              <p className="text-sm text-tertiary">Surat, Gujarat</p>
+              <p className="text-secondary">Gujarat Technological University</p>
+              <p className="text-sm text-tertiary">Ahmedabad, India</p>
             </div>
             <div className="text-right">
               <p className="font-semibold text-primary">CGPA: 8.39/10</p>

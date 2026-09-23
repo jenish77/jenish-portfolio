@@ -62,8 +62,8 @@ export default function ContactSection() {
         </svg>
       ),
       label: 'GitHub',
-      value: 'github.com/jenish7',
-      link: 'https://github.com/jenish7',
+      value: 'github.com/jenish77',
+      link: 'https://github.com/jenish77',
     },
     {
       icon: (

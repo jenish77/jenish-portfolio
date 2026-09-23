@@ -97,7 +97,7 @@ export default function HeroSection() {
               className="flex gap-4 mt-8 justify-center md:justify-start"
             >
               <a
-                href="https://github.com/jenish7"
+                href="https://github.com/jenish77"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
