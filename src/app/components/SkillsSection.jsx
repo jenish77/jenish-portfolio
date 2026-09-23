@@ -82,22 +82,28 @@ export default function SkillsSection() {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="card"
-              whileHover={{ scale: 1.02 }}
+              className="card group hover:border-primary/50 transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 30px -10px rgba(37, 99, 235, 0.2)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
+                <motion.div 
+                  className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-white shadow-md"
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                >
                   {category.icon}
-                </div>
-                <h3 className="text-xl font-bold">{category.title}</h3>
+                </motion.div>
+                <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{category.title}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, i) => (
                   <motion.span
                     key={i}
-                    className="px-3 py-1.5 rounded-lg glass text-sm font-medium hover:bg-gradient-primary hover:text-white transition-all cursor-default"
-                    whileHover={{ scale: 1.05 }}
+                    className="px-3.5 py-1.5 rounded-lg glass text-xs font-semibold text-secondary hover:text-white hover:bg-gradient-primary transition-all cursor-default border border-primary/10 shadow-sm"
+                    whileHover={{ scale: 1.12, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
                     {skill}
                   </motion.span>

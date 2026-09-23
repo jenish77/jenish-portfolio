@@ -66,9 +66,11 @@ export default function HeroSection() {
               variants={fadeInUp}
               className="flex flex-wrap gap-4 justify-center md:justify-start"
             >
-              <a
+              <motion.a
                 href="#projects"
-                className="btn btn-primary"
+                className="btn btn-primary shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+                whileHover={{ scale: 1.06, y: -3, boxShadow: "0 10px 25px rgba(37, 99, 235, 0.6)" }}
+                whileTap={{ scale: 0.95 }}
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -78,17 +80,19 @@ export default function HeroSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 View Projects
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="/resume.pdf"
                 download
                 className="btn btn-secondary"
+                whileHover={{ scale: 1.06, y: -3 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Download Resume
-              </a>
+              </motion.a>
             </motion.div>
 
             {/* Social Links */}
@@ -96,41 +100,47 @@ export default function HeroSection() {
               variants={fadeInUp}
               className="flex gap-4 mt-8 justify-center md:justify-start"
             >
-              <a
+              <motion.a
                 href="https://github.com/jenish77"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
+                className="w-12 h-12 rounded-full glass flex items-center justify-center transition-all"
+                whileHover={{ scale: 1.15, rotate: 5, y: -4 }}
+                whileTap={{ scale: 0.9 }}
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="https://linkedin.com/in/jenish-maru"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
+                className="w-12 h-12 rounded-full glass flex items-center justify-center transition-all"
+                whileHover={{ scale: 1.15, rotate: -5, y: -4 }}
+                whileTap={{ scale: 0.9 }}
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="mailto:jenishmaru2002@gmail.com"
-                className="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
+                className="w-12 h-12 rounded-full glass flex items-center justify-center transition-all"
+                whileHover={{ scale: 1.15, rotate: 5, y: -4 }}
+                whileTap={{ scale: 0.9 }}
                 aria-label="Email"
               >
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-              </a>
+              </motion.a>
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Avatar */}
+          {/* Right Content - Avatar & Floating Tech Badges */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -142,7 +152,11 @@ export default function HeroSection() {
               <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-75 blur-xl animate-pulse"></div>
               
               {/* Avatar Container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glass-strong p-2">
+              <motion.div 
+                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glass-strong p-2 shadow-2xl"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4 }}
+              >
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img 
                     src="/profile.png" 
@@ -150,27 +164,34 @@ export default function HeroSection() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Floating Elements */}
+              {/* Floating Badges */}
               <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 glass rounded-full flex items-center justify-center"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-3 -right-3 glass px-3.5 py-1.5 rounded-full flex items-center gap-2 border border-primary/30 shadow-lg text-xs font-semibold"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Node.js / NestJS</span>
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 w-20 h-20 glass rounded-full flex items-center justify-center"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+                className="absolute -bottom-3 -left-3 glass px-3.5 py-1.5 rounded-full flex items-center gap-2 border border-purple-500/30 shadow-lg text-xs font-semibold"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, delay: 1.5, ease: "easeInOut" }}
               >
-                <svg className="w-10 h-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-                </svg>
+                <span className="text-primary">✦</span>
+                <span>3.6+ Yrs Exp</span>
+              </motion.div>
+
+              <motion.div
+                className="absolute top-1/2 -left-8 transform -translate-y-1/2 glass px-3 py-1 rounded-full text-xs font-medium border border-blue-500/30 hidden md:flex items-center gap-1.5"
+                animate={{ x: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, delay: 0.8 }}
+              >
+                <span className="text-accent">🚀</span>
+                <span>Microservices</span>
               </motion.div>
             </div>
           </motion.div>

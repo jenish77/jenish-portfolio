@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { fadeInUp, fadeInLeft, staggerContainer } from '../utils/animations';
+import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '../utils/animations';
 
 export default function ExperienceSection() {
   const ref = useRef(null);
@@ -50,44 +50,63 @@ export default function ExperienceSection() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-primary hidden md:block"></div>
+          <motion.div 
+            className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-primary hidden md:block origin-top"
+            initial={{ scaleY: 0 }}
+            animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          ></motion.div>
 
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              variants={fadeInLeft}
-              className={`mb-12 flex flex-col md:flex-row gap-8 items-start ${
+              variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
+              className={`mb-12 flex flex-col md:flex-row gap-8 items-start relative ${
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}
             >
               {/* Timeline Dot */}
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-primary border-4 border-[hsl(var(--bg-primary))]"></div>
+              <motion.div 
+                className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-gradient-primary border-4 border-[hsl(var(--bg-primary))] z-10"
+                animate={{ scale: [1, 1.25, 1], boxShadow: ["0 0 0px rgba(96,165,250,0)", "0 0 15px rgba(96,165,250,0.8)", "0 0 0px rgba(96,165,250,0)"] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.5 }}
+              ></motion.div>
 
               {/* Content */}
               <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:pl-12'}`}>
                 <motion.div
-                  className="card"
-                  whileHover={{ scale: 1.02 }}
+                  className="card group hover:border-primary/50 transition-all duration-300"
+                  whileHover={{ scale: 1.025, y: -6, boxShadow: "0 20px 30px -10px rgba(37, 99, 235, 0.2)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
                     <div>
-                      <h3 className="text-xl font-bold">{exp.company}</h3>
+                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{exp.company}</h3>
                       <p className="text-primary font-semibold">{exp.role}</p>
                       <p className="text-sm text-tertiary">{exp.location}</p>
                     </div>
-                    <span className="px-3 py-1 rounded-full glass text-sm font-medium">
+                    <motion.span 
+                      className="px-3.5 py-1 rounded-full glass text-xs font-semibold border border-primary/20 bg-primary/10 text-primary"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {exp.period}
-                    </span>
+                    </motion.span>
                   </div>
 
-                  <ul className="space-y-2 text-left">
+                  <ul className="space-y-2.5 text-left">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start gap-2">
+                      <motion.li 
+                        key={i} 
+                        className="flex items-start gap-2.5"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                        transition={{ delay: 0.2 + i * 0.08 }}
+                      >
                         <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-secondary">{achievement}</span>
-                      </li>
+                        <span className="text-secondary text-sm leading-relaxed">{achievement}</span>
+                      </motion.li>
                     ))}
                   </ul>
                 </motion.div>

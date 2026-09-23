@@ -191,15 +191,18 @@ a:hover {
 }
 
 /* Gradients */
-.gradient-primary {
+.gradient-primary,
+.bg-gradient-primary {
   background: var(--gradient-primary);
 }
 
-.gradient-secondary {
+.gradient-secondary,
+.bg-gradient-secondary {
   background: var(--gradient-secondary);
 }
 
-.gradient-accent {
+.gradient-accent,
+.bg-gradient-accent {
   background: var(--gradient-accent);
 }
 
